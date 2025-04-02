@@ -1,0 +1,138 @@
+.producto-detalle {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    box-shadow: 0px 0px 20px 0px #0000000d;
+    border-bottom-left-radius: 55px;
+    border-bottom-right-radius: 55px;
+    border-top-right-radius: 55px;
+    margin-top: 8%;
+}
+
+.producto-detalle1 {
+    width: 100%;
+    display: flex;
+    height: 70px;
+}
+.img-auto {
+    width: 500px;
+    border-bottom-left-radius: 55px;
+}
+
+.imagen-container {
+    width: 500px;
+    background: #ffffff;
+    border-bottom-left-radius: 55px;
+}
+
+
+
+.producto-info {
+    background: #ffffff;
+    border-top-right-radius: 55px;
+    border-bottom-right-radius: 55px;
+    width: 655px;
+    padding: 15px 15px 0px 0px;
+}
+
+.producto-info .boton {
+    background-color: #346749;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.producto-info .boton:hover {
+    background-color: #223a2c;
+}
+
+img.shop {
+    width: 16px;
+    object-fit: contain;
+    height: 16px;
+}
+
+.botoncarrito {
+    width: 110px;
+    background: #346749;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 42px;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button.boton.boton-carrito {
+    width: 70px;
+}
+
+/* Descuento en porcentaje */
+.descuento {
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 5px;
+}
+
+.precio {
+    text-decoration: line-through;
+    color: #999;
+    margin: 0px;
+}
+
+.carrito-panel {
+    position: fixed;
+    right: 0;
+    top: 90px;
+    width: 250px;
+    background-color: white;
+    border-left: 1px solid #ccc;
+    padding: 10px;
+    max-height: 90%;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.total-carrito {
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+
+.boton-eliminar {
+    background-color: #f44336;  /* Color rojo para eliminar */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.boton-eliminar:hover {
+    background-color: #d32f2f;  /* Rojo oscuro al pasar el mouse */
+}
+
+
+.carritoimg{
+    width: 20px;
+}

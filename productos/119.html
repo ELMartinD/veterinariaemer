@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Veterinaria</title>
+    <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="/css/publicaciones.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header1">
+            <a href="/index.html"><img class="img-logo" src="/img/EMERGENCIA VETERINARIA Logo - White with Black Background - 5000x5000.png" alt="Logo"></a>
+        </div>
+    
+        <div class="header2">
+            <input type="text" class="search-bar" placeholder="Buscar..." id="searchInput">
+            <div id="searchResults"></div> <!-- Aquí aparecerán los resultados de búsqueda -->
+        </div>
+    
+        <div class="header3">
+            <img style="width: 30px;" src="/img/whatsapp.png" alt="">
+            <a class="btn-nav" href="#productos">381 543 353 64</a>
+            <img style="width: 30px;" src="/img/usuario.png" alt="">
+        </div>
+    
+        <nav>
+            <ul>
+                <a href="/ofertas.html">Ofertas<img class="barritaabajo" src="/img/arrow_drop_down_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+            </ul>
+
+            <ul>
+                <a href="/perros.html">Perros<img class="barritaabajo" src="/img/arrow_drop_down_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+            </ul>
+
+            <ul>
+                <a href="/gatos.html">Gatos<img class="barritaabajo" src="/img/arrow_drop_down_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="producto-detalle">
+        <div class="imagen-container" style="position: relative;">
+            <!-- Mostrar el cartelito de descuento si el producto tiene un descuento -->
+            <div class="oferta"><span class="descuento">20% OFF</span></div>
+            <img class="img-auto" src="/uploads/1743602808638.webp" alt="simparica">
+        </div>
+
+        <div class="producto-info">
+            <h1>simparica</h1>
+
+            <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                <p class="precio">$ 5000</p>
+                <p class="precio-descuento">$ 4000</p>
+            </div>
+
+            <div class="botones">
+                <a href="/comprar/119" class="boton">Comprar ahora</a>
+                
+                <!-- Botón para agregar al carrito con data-* -->
+                <button class="botoncarrito" 
+                        data-id="119" 
+                        data-nombre="simparica" 
+                        data-precio="5000" 
+                        data-precio_descuento="4000" 
+                        data-imagen="1743602808638.webp" 
+                        onclick="agregarAlCarrito(event)">
+                    <img class="shop" src="/img/shopping_cart_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="">
+                </button>
+            </div>
+
+            <div class="descripcion-container">
+                <h3>Descripción completa</h3>
+                <p>6346</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="seccion1">
+        <h1>Ofertas</h1>
+    </div>
+
+    <!-- Panel del carrito -->
+    <div id="carrito-panel" class="carrito-panel"></div>
+
+    <!-- Total del carrito -->
+    <div id="total-carrito" class="total-carrito"></div>
+
+    <div id="ofertas" class="productos"></div>
+    <div id="perros" class="productos"></div>
+    <div id="gatos" class="productos"></div>
+    <div id="otros" class="productos"></div>
+
+    <script src="mostrar.js"></script>
+    <script src="/server.js"></script>
+    <script src="/script.js"></script>
+    <script src="/buscar.js"></script>
+</body>
+</html>
+            
