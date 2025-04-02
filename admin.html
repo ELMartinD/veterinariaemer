@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa - Tienda Veterinaria</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+
+<!-- Formulario para crear una publicación -->
+<div class="admin-form">
+    <h2 id="formTitle">Crear Publicación</h2>
+    <form id="productForm" action="/admin/add-product" method="POST" enctype="multipart/form-data">
+        <label for="nombre">Nombre del Producto:</label>
+        <input type="text" id="nombre" name="nombre" required>
+    
+        <label for="precio_descuento">Precio en Descuento (Opcional):</label>
+        <input type="number" id="precio_descuento" name="precio_descuento" step="0.01" placeholder="Precio con descuento (si aplica)">
+    
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" required>
+    
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" required></textarea>
+    
+        <label for="imagen">Imagen:</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*">
+        
+        <label for="seccion">Seleccionar Sección:</label>
+        <select id="seccion" name="seccion" required>
+            <option value="ofertas">Ofertas</option>
+            <option value="perros">Perros</option>
+            <option value="gatos">Gatos</option>
+            <option value="otros">Otros</option>
+        </select>
+    
+        <button type="submit">Guardar Cambios</button>
+    </form>        
+</div>
+
+<!-- Formulario para editar una publicación -->
+<div class="admin-form" id="editFormContainer" style="display: none;">
+    <h2 id="formTitle">Editar Publicación</h2>
+    <form id="editProductForm" action="/admin/edit-product" method="POST" enctype="multipart/form-data">
+        <input type="hidden" id="editProductId" name="id">  <!-- Se usará para pasar el ID del producto a editar -->
+
+        <label for="editNombre">Nombre del Producto:</label>
+        <input type="text" id="editNombre" name="nombre" required>
+
+        <label for="editPrecio_descuento">Precio en Descuento (Opcional):</label>
+        <input type="number" id="editPrecio_descuento" name="precio_descuento" step="0.01" placeholder="Precio con descuento (si aplica)">
+        
+        <label for="editPrecio">Precio:</label>
+        <input type="number" id="editPrecio" name="precio" required>
+
+        <label for="editDescripcion">Descripción:</label>
+        <textarea id="editDescripcion" name="descripcion" required></textarea>
+
+        <label for="editImagen">Imagen (Opcional):</label>
+        <input type="file" id="editImagen" name="imagen" accept="image/*"> <!-- No es requerido -->
+
+        <label for="editSeccion">Seleccionar Sección:</label>
+        <select id="editSeccion" name="seccion" required>
+            <option value="ofertas">Ofertas</option>
+            <option value="perros">Perros</option>
+            <option value="gatos">Gatos</option>
+            <option value="otros">Otros</option>
+        </select>
+
+        <button type="submit">Guardar Cambios</button>
+        <button type="button" id="deleteProductButton" onclick="eliminarProducto()">Eliminar Producto</button>
+    </form>
+</div>
+
+
+
+<!-- Contenedor de mensajes flotantes -->
+<div id="message-container"></div>
+
+
+
+    <!-- Lista de productos existentes -->
+    <h3>Publicaciones Existentes</h3>
+    <div id="productos-list">
+        <!-- Aquí se mostrarán los productos con la opción de editar y eliminar -->
+    </div>
+    
+
+
+    <footer>
+        &copy; 2025 Tienda Veterinaria - Todos los derechos reservados.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

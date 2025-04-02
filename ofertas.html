@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Veterinaria</title>
+    <link rel="stylesheet" href="css/css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+</head>
+<body>
+    <header>
+        <div class="header1">
+            <a href="index.html"><img class="img-logo" src="img/EMERGENCIA VETERINARIA Logo - White with Black Background - 5000x5000.png" alt="Logo"></a>
+        </div>
+    
+        <div class="header2">
+            <input type="text" class="search-bar" placeholder="Buscar..." id="searchInput">
+            <div id="searchResults"></div> <!-- Aquí aparecerán los resultados de búsqueda -->
+        </div>
+
+        <div class="header3">
+            <img style="width: 30px;" src="img/whatsapp.png" alt="">
+            <a class="btn-nav" href="#productos">381 543 353 64</a>
+            <img style="width: 30px;" src="img/usuario.png" alt="">
+        </div>
+
+        <nav>
+            <ul>
+                <a href="/ofertas.html">Ofertas<img class="barritaabajo" src="/img/arrow_drop_down_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+            </ul>
+
+            <ul>
+                <a href="/perros.html">Perros<img class="barritaabajo" src="/img/arrow_drop_down_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+            </ul>
+
+            <ul>
+                <a href="/gatos.html">Gatos<img class="barritaabajo" src="/img/arrow_drop_down_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner-oferta">
+    </div>
+
+    <div class="seccionprincipal">
+        
+        <div class="contenedor-seccionprincipal">
+                <div class="iconos-img">
+
+                    <img class="icon-img" src="img/envio.png" alt="">
+
+                </div>
+
+                <div class="iconos-txt">
+                    <h1>Envio gratis a partir de los 30.000</h1>
+                    <h2>Para todo Tucuman</h2>
+                </div>
+        </div>
+
+        <div class="contenedor-seccionprincipal">
+            <div class="iconos-img">
+
+                <img class="icon-img" src="img/tienda.png" alt="">
+
+            </div>
+
+            <div class="iconos-txt">
+                <h1>Retiro en sucursal</h1>
+                <h2>Con descuentos</h2>
+            </div>
+    </div>
+
+    <div class="contenedor-seccionprincipal">
+        <div class="iconos-img">
+
+            <img class="icon-img" src="img/tarjeta.png" alt="">
+
+        </div>
+
+        <div class="iconos-txt">
+            <h1>Cuotas fijas</h1>
+            <h2>Todos los medios de pago</h2>
+        </div>
+</div>
+
+<div class="contenedor-seccionprincipal">
+    <div class="iconos-img">
+
+        <img class="icon-img" src="img/oferta2.png" alt="">
+
+    </div>
+
+    <div class="iconos-txt">
+        <h1>Ofertas</h1>
+        <h2>Ofrecemos descuentos para nuestros clientes</h2>
+    </div>
+</div>
+
+    </div>
+
+<!-- Solo la sección de ofertas si hay productos en esa categoría -->
+<div class="seccion1" id="ofertas-section" style="margin-top: 20px;">
+    <div class="ofertas">
+        <h1>Ofertas</h1>
+    </div>
+</div>
+
+<div id="ofertas" class="productos">
+    <!-- Aquí se mostrarán las publicaciones de ofertas -->
+</div>
+
+<!-- Sección de Perros, se ocultará si no hay productos en esa categoría -->
+<div class="seccion1" id="perros-section" style="display:none;">
+    <h1 style="display:none;">Perros</h1>
+</div>
+
+<div id="perros" class="productos" style="display:none;">
+    <!-- Aquí se mostrarán las publicaciones de perros -->
+</div>
+
+<!-- Sección de Gatos, se ocultará si no hay productos en esa categoría -->
+<div class="seccion1" id="gatos-section" style="display:none;">
+    <h1 style="display:none;">Gatos</h1>
+</div>
+
+<div id="gatos" class="productos" style="display:none;">
+    <!-- Aquí se mostrarán las publicaciones de gatos -->
+</div>
+
+<!-- Sección de Otros, se ocultará si no hay productos en esa categoría -->
+<div class="seccion1" id="otros-section" style="display:none;">
+</div>
+
+<div id="otros" class="productos">
+    <!-- Aquí se mostrarán las publicaciones de otros -->
+</div>
+
+    <div class="seccion2">
+        <h1>Marcas con la que trabajamos</h1>
+
+        <div class="marcas">
+
+            <img class="marcaimg" src="img/brand2.png" alt="">
+            <img class="marcaimg" src="img/brand3.png" alt="">
+            <img class="marcaimg" src="img/brand4.png" alt="">
+            <img class="marcaimg" src="img/brand5.png" alt="">
+
+        </div>
+    </div>
+    
+
+
+    <div class="noticias">
+
+        <div class="noticias-cont">
+            <p class="naranja">Se parte de la familia.</p>
+            <p>Suscribite para recibir todas nuestras ofertas y novedades</p>
+        </div>
+
+        <div class="noticias-cont2">
+            <input class="email" type="email" name="" id="" placeholder="ejemplo@gmail.com">
+            <button class="boton-naranja" type="submit">Enviar</button>
+        </div>
+
+    </div>
+
+    
+
+
+     <!-- Footer principal -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>Nosotros</h3>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Sucursales</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">Medios de pago</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Cuenta</h3>
+                <ul>
+                    <li><a href="#">Mis pedidos</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>¡Síguenos!</h3>
+                <div class="alinear">
+                    <div class="redes">
+                        <a href="#"><img style="width: 25px;" src="img/social.png" alt="">Instagram</a>
+                    </div>
+
+                    <div class="redes">
+                        <a href="#"><img style="width: 25px;" src="img/facebook.png" alt="">Facebook</a>
+                    </div>
+
+                </div>
+                <p><a style="text-decoration: none; color: rgba(0, 0, 0, 0.633);" href="#">Botón de arrepentimiento</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Emergencia Veterinaria | <a href="#">Términos y condiciones</a></p>
+        </div>
+    </footer>
+
+    <script src="mostrar.js"></script>
+    <script src="buscar.js"></script>
+    <script src="server.js"></script>
+    <script src="script.js"></script>
+    
+
+    
+</body>
+</html>

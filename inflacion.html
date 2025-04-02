@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Precios al Consumidor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        input, button {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Índice de Precios al Consumidor (Semanal)</h1>
+        <canvas id="inflacionChart"></canvas>
+        <div class="controls">
+            <input type="text" id="semana" placeholder="Ej: Semana 1 - Noviembre">
+            <input type="number" id="valor" placeholder="Inflación %" step="0.01">
+            <button onclick="agregarDato()">Agregar</button>
+        </div>
+    </div>
+    <script>
+        const ctx = document.getElementById('inflacionChart').getContext('2d');
+        let datosInflacion = [-1.40, -0.15, -0.55, -0.77, 0.57, 4, 4.21, -0.01, 0.50, 0.30, 0.10, 0.20, 2.92, -3.89, -0.47, -1.20, 6.50, -2.43, 6.24, -3.60];
+        let semanas = ["1° semana de noviembre", "2° semana de noviembre", "3° semana de noviembre", "4° semana de noviembre", "1° semana de diciembre", "2° semana de diciembre", "3° semana de diciembre", "4° semana de diciembre", "1° semana de enero", "2° semana de enero", "3° semana de enero", "4° semana de enero", "1° semana de febrero", "2° semana de febrero", "3° semana de febrero", "4° semana de febrero", "1° semana de marzo", "2° semana de marzo", "3° semana de marzo", "4° semana de marzo"];
+        let inflacionAcumulada = calcularInflacionAcumulada(datosInflacion);
+
+        let inflacionChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: semanas,
+                datasets: [
+                    {
+                        label: 'Inflación (%)',
+                        data: datosInflacion,
+                        backgroundColor: '#6b98c7',
+                        borderColor: '#4a7ba8',
+                        borderWidth: 1,
+                        yAxisID: 'y',
+                    },
+                    {
+                        label: 'Inflación Acumulada',
+                        data: inflacionAcumulada,
+                        type: 'line',
+                        borderColor: '#28a745',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#28a745',
+                        pointRadius: 4,
+                        fill: false,
+                        tension: 0.4, 
+                        yAxisID: 'y',
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: "rgba(0, 0, 0, 0.1)"
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 45,  // Rotar etiquetas para mejor visibilidad
+                            minRotation: 45,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        function calcularInflacionAcumulada(datos) {
+            let acumulada = [];
+            let total = 1;
+            for (let i = 0; i < datos.length; i++) {
+                total *= (1 + datos[i] / 100);
+                acumulada.push((total - 1) * 100);
+            }
+            return acumulada;
+        }
+
+        function agregarDato() {
+            let semana = document.getElementById("semana").value;
+            let valor = parseFloat(document.getElementById("valor").value);
+            if (semana && !isNaN(valor)) {
+                inflacionChart.data.labels.push(semana);
+                datosInflacion.push(valor);
+                inflacionChart.data.datasets[0].data.push(valor);
+                inflacionChart.data.datasets[1].data = calcularInflacionAcumulada(datosInflacion);
+                inflacionChart.update();
+            }
+        }
+    </script>
+</body>
+</html>
