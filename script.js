@@ -208,7 +208,7 @@ async function cargarProductos() {
 }
 
 // Cambiar URL de localhost a la URL pública de ngrok
-const urlBase = 'https://a1dc-190-230-81-138.ngrok-free.app'; // URL de ngrok
+const urlBase = 'https://secure-guided-bream.ngrok-free.app/'; // URL de ngrok
 
 // Función para cargar productos
 async function cargarProductos() {
