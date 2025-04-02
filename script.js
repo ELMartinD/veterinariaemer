@@ -207,10 +207,34 @@ async function cargarProductos() {
     });
 }
 
+// Cambiar URL de localhost a la URL pública de ngrok
+const urlBase = 'https://a1dc-190-230-81-138.ngrok-free.app'; // URL de ngrok
 
+// Función para cargar productos
+async function cargarProductos() {
+    const response = await fetch(`${urlBase}/productos`);  // Asegúrate de que esta ruta esté correcta
+    const productos = await response.json();
 
-// Cargar los productos al cargar la página
+    const productosContainer = document.getElementById('productos-list');
+    productosContainer.innerHTML = '';  // Limpiar contenido previo
+
+    productos.forEach(producto => {
+        const productoDiv = document.createElement('div');
+        productoDiv.classList.add('producto');
+        productoDiv.innerHTML = `
+            <h4>${producto.nombre}</h4>
+            <p>${producto.descripcion}</p>
+            <p><del>$${producto.precio}</del></p>
+            <p>$${producto.precio_descuento || producto.precio}</p>
+            <img src="uploads/${producto.imagen}" width="100">
+        `;
+        productosContainer.appendChild(productoDiv);
+    });
+}
+
+// Cargar los productos cuando se carga la página
 window.onload = cargarProductos;
+
 
 
 
