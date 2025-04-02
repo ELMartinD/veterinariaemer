@@ -1,7 +1,7 @@
 // Función para cargar los productos solo de las secciones disponibles
 async function cargarProductos() {
     try {
-        const response = await fetch('http://localhost:3000/productos');
+        const response = await fetch('https://emergenciaveterinaria.netlify.app//productos');
         if (!response.ok) {
             throw new Error('Error al obtener los productos');
         }
