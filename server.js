@@ -686,7 +686,7 @@ app.post('/login', (req, res) => {
 
 
 // Ruta para proteger la página admin.html
-app.get('http://127.0.0.1:5500/admin.html', (req, res) => {
+app.get('/admin.html', (req, res) => {
     if (!req.session.user) {
         return res.redirect('http://127.0.0.1:5500/login.html');  // Si no está autenticado, redirigir al login
     }
